@@ -178,10 +178,10 @@ section {
 }
 
 .hero {
-  background-image: url("img/annie-spratt-B4w3LnP6Ec0-unsplash.jpg");
+  background-image: url("../img/annie-spratt-B4w3LnP6Ec0-unsplash.jpg");
   background-image: image-set(
-    url("img/annie-spratt-B4w3LnP6Ec0-unsplash.avif") type("image/avif"),
-    url("img/annie-spratt-B4w3LnP6Ec0-unsplash.jpg") type("image/jpeg")
+    url("../img/annie-spratt-B4w3LnP6Ec0-unsplash.avif") type("image/avif"),
+    url("../img/annie-spratt-B4w3LnP6Ec0-unsplash.jpg") type("image/jpeg")
   );
   background-position: center;
   background-repeat: no-repeat;
