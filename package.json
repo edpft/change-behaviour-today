@@ -1,5 +1,14 @@
 {
-  "dev-dependencies": {
-    "lighthouse": "^11.1.0"
+  "name": "change-behaviour-today",
+  "version": "0.1.0",
+  "description": "Sarah's website",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build" ,
+    "preview": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^4.4.5"
   }
 }
