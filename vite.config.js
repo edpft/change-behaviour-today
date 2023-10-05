@@ -2,7 +2,8 @@
 export default {
     root: "src/",
     build: {
-        outDir: "../dst/"
+        outDir: "../dst/",
+        emptyOutDir: true
     }
   }
 
