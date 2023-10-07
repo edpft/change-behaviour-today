@@ -21,7 +21,10 @@
       formatter.${system} = nixpkgs-fmt;
 
       devShell.${system} = mkShell {
-        buildInputs = [ nodejs_18 ];
+        buildInputs = [ 
+          google-chrome
+          nodejs_18
+        ];
       };
     };
 }

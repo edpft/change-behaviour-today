@@ -41,8 +41,9 @@
 
 html {
   font-family: 'IBM Plex Sans', sans-serif;
+  font-size: var(--font-size-m);
   line-height: 1.5;
-  color: var(--colour-black);
+  color: var(--colour-dark-grey);
   background: var(--colour-white);
   margin: 0;
   padding: 0;
@@ -94,6 +95,7 @@ h1,
 h2,
 h3,
 h4 {
+  color: var(--colour-black);
   font-family: 'IBM Plex Serif', serif;
 }
 
@@ -148,11 +150,6 @@ a {
   min-height: 44px;
 }
 
-p {
-  color: var(--colour-dark-grey);
-  font-size: var(--font-size-m);
-}
-
 li {
   margin-left: 1rem;
   padding-left: 0.5rem;
@@ -163,13 +160,13 @@ section {
 }
 
 .footer {
-  background: var(--colour-light-grey);
+  background: var(--colour-dark-grey);
   height: 20dvh;
   margin-top: var(--space-l);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .footer__text {
@@ -178,10 +175,10 @@ section {
 }
 
 .hero {
-  background-image: url("public/annie-spratt-B4w3LnP6Ec0-unsplash.jpg");
   background-image: image-set(
-    url("public/annie-spratt-B4w3LnP6Ec0-unsplash.avif") type("image/avif"),
-    url("public/annie-spratt-B4w3LnP6Ec0-unsplash.jpg") type("image/jpeg")
+    url("annie-spratt-B4w3LnP6Ec0-unsplash.avif") type("image/avif"),
+    url("annie-spratt-B4w3LnP6Ec0-unsplash.webp") type("image/webp"),
+    url("annie-spratt-B4w3LnP6Ec0-unsplash.jpg") type("image/jpeg")
   );
   background-position: center;
   background-repeat: no-repeat;
@@ -220,13 +217,12 @@ section {
 }
 
 .hero__cfa:hover {
-  background: var(--colour-light-grey);
-  color: var(--colour-white);
+  border: 4px solid var(--colour-white);
 }
 
 .contact-methods {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-method {
