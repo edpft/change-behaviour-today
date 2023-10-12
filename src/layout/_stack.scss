@@ -1,0 +1,26 @@
+// https://every-layout.dev/layouts/stack/
+
+@use '../abstracts/variables' as *;
+
+.l-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+[class^='l-stack'] > * {
+    // top and bottom margins in horizontal-tb writing mode
+    margin-block: 0;
+}
+
+.l-stack--medium > * + * {
+    margin-block-start: $space-m;
+}
+
+.l-stack--large > * + * {
+    margin-block-start: $space-l;
+}
+
+.l-stack--small > * + * {
+    margin-block-start: $space-s;
+}
