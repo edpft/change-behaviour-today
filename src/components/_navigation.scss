@@ -1,0 +1,58 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.c-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background: $white;
+    border-bottom: 1px solid $black;
+    position: fixed;
+    top: 0;
+    height: max(44px, 5dvh);
+}
+
+.c-navigation__items {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    background: $white;
+    top: 100%;
+    right: 0%;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: ease-in-out 200ms;
+    display: flex;
+    flex-direction: column;
+
+    &--open {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.c-navigation__item {
+    list-style: none;
+}
+
+.c-navigation__link {
+    @include remove-default-anchor-styles;
+    @include add-button-display-styles;
+    @include touch-button;
+    
+    color: $black;
+    border-bottom: 1px solid $black;
+    text-transform: uppercase;
+    text-align: end;
+    width: 100%;
+    padding: $space-s $space-xs;
+    
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover, &:focus {
+        color: $white;
+        background: $black;
+    }
+}

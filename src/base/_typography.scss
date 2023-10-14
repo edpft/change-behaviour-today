@@ -13,16 +13,15 @@ h1,h2,h3,h4 {
 
 h1 {
     font-size: $size-3xl;
+    color: $white;
 }
 
 h2 {
     font-size: $size-2xl;
+    color: $darkest-grey
 }
 
 h3 {
     font-size: $size-xl;
-}
-
-h4 {
-    font-size: $size-l;
+    color: $darker-grey
 }

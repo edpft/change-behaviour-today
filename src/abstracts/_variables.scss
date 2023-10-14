@@ -41,3 +41,18 @@ $space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
 
 // Space value pairs - custom steps
 $space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+
+$headers: h1, h2, h3, h4;
+
+// colours
+
+$black: oklab(5% 0 0);
+$darkest-grey: oklab(15% 0 0);
+$darker-grey: oklab(25% 0 0);
+$dark-grey: oklab(35% 0 0);
+$grey: oklab(45% 0 0);
+$light-grey: oklab(55% 0 0);
+$lighter-grey: oklab(65% 0 0);
+$lightest-grey: oklab(75% 0 0);
+$off-white: oklab(85% 0 0);
+$white: oklab(95% 0 0);

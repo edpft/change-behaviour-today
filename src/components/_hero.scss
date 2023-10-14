@@ -1,0 +1,23 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.c-hero {
+    height: calc(100dvh - max(44px, 5dvh));
+    background-image: image-set(
+        url("annie-spratt-B4w3LnP6Ec0-unsplash.avif") type("image/avif"),
+        url("annie-spratt-B4w3LnP6Ec0-unsplash.webp") type("image/webp"),
+        url("annie-spratt-B4w3LnP6Ec0-unsplash.jpg") type("image/jpg"),
+    );
+    color: $white;
+    padding-bottom: $space-xs;
+}
+
+.c-hero__button {
+    @include remove-default-anchor-styles;
+    @include add-button-display-styles;
+    @include touch-button;
+
+    background: $white;
+    color: $black;
+
+}

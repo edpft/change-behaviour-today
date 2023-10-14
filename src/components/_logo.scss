@@ -1,0 +1,13 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.c-logo {
+    @include remove-default-button-styles;
+    @include add-button-display-styles;
+    @include touch-button;
+}
+
+.c-logo__image {
+    height: 100%;
+    padding: 0.125rem;
+}

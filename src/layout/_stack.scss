@@ -5,22 +5,38 @@
 .l-stack {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
-[class^='l-stack'] > * {
-    // top and bottom margins in horizontal-tb writing mode
-    margin-block: 0;
-}
+.l-stack--large {
+    @each $header in $headers {
+        > #{$header} + * {
+            margin-top: $space-l-xl;
+        }
+    }
+    > * + * {
+        margin-top: $space-l;
+    }
+} 
 
-.l-stack--medium > * + * {
-    margin-block-start: $space-m;
-}
+.l-stack--medium {
+    @each $header in $headers {
+        > #{$header} + * {
+            margin-top: $space-m-l;
+        }
+    }
+    > * + * {
+        margin-top: $space-m;
+    }
+}    
 
-.l-stack--large > * + * {
-    margin-block-start: $space-l;
-}
-
-.l-stack--small > * + * {
-    margin-block-start: $space-s;
+.l-stack--small {
+    @each $header in $headers {
+        > #{$header} + * {
+            margin-top: $space-s-m;
+        }
+    }
+    > * + * {
+        margin-top: $space-s;
+    }
 }

@@ -1,0 +1,29 @@
+@use './variables' as *;
+
+@mixin touch-button {
+    display: block;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+@mixin remove-default-button-styles {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+
+    @media screen and (-ms-high-contrast: active) {
+        border: 2px solid currentcolor;
+    }
+}
+
+@mixin remove-default-anchor-styles {
+    text-decoration: none;
+}
+
+@mixin add-button-display-styles {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
