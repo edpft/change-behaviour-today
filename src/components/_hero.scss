@@ -2,14 +2,36 @@
 @use '../abstracts/variables' as *;
 
 .c-hero {
+    margin-top: max(44px, 5dvh);
     height: calc(100dvh - max(44px, 5dvh));
-    background-image: image-set(
-        url("annie-spratt-B4w3LnP6Ec0-unsplash.avif") type("image/avif"),
-        url("annie-spratt-B4w3LnP6Ec0-unsplash.webp") type("image/webp"),
-        url("annie-spratt-B4w3LnP6Ec0-unsplash.jpg") type("image/jpg"),
-    );
-    color: $white;
+    color: $dark-brown;
     padding-bottom: $space-xs;
+    display: grid;
+
+    &::after {
+        content: "";
+        grid-area: 1 / -1;
+        background-color: $white;
+        opacity: 0.5;
+    }
+}
+
+.c-hero__content {
+    z-index: 1;
+    grid-area: 1 / -1;
+    margin: auto;
+}
+
+.c-hero__image {
+    height: calc(100dvh - max(44px, 5dvh));
+    grid-area: 1 / -1;
+    background-repeat: no-repeat;
+    background-image: image-set(
+        url("stephan-eickschen-UqJsmLA52Qc-unsplash.avif") type("image/avif"),
+        url("stephan-eickschen-UqJsmLA52Qc-unsplash.webp") type("image/webp"),
+        url("stephan-eickschen-UqJsmLA52Qc-unsplash.jpg") type("image/jpg"),
+    );
+    background-size: cover;
 }
 
 .c-hero__button {
@@ -17,7 +39,15 @@
     @include add-button-display-styles;
     @include touch-button;
 
-    background: $white;
-    color: $black;
+    background: $indigo;
+    color: $white;
+    align-self: center;
+    padding: $space-s $space-l;
+    border-radius: $space-m;
+    font-weight: $semibold;
+
+    &:hover {
+        scale: 105%;
+    }
 
 }

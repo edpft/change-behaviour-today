@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as *;
+
+.c-fees {
+    border-collapse: collapse;
+}
+
+.c-fees__price {
+    text-align: right;
+}
+
+.c-fees__row {
+    border-bottom: 1px solid $light-brown;
+}

@@ -1,13 +1,5 @@
 // @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
 
-// Font stacks
-$sans-serif: ('IBM Plex Sans', sans-serif);
-$serif: ('IBM Plex Serif', serif);
-
-// Font weights
-$bold: 700;
-$regular: 400;
-
 // Calculated font sizes
 $size-2xs: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
 $size-xs: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
@@ -46,13 +38,14 @@ $headers: h1, h2, h3, h4;
 
 // colours
 
-$black: oklab(5% 0 0);
-$darkest-grey: oklab(15% 0 0);
-$darker-grey: oklab(25% 0 0);
-$dark-grey: oklab(35% 0 0);
-$grey: oklab(45% 0 0);
-$light-grey: oklab(55% 0 0);
-$lighter-grey: oklab(65% 0 0);
-$lightest-grey: oklab(75% 0 0);
-$off-white: oklab(85% 0 0);
-$white: oklab(95% 0 0);
+$indigo: oklab(50% 11.5% -43.5%);
+$amethyst: oklab(50% 6.25% -4.25%);
+$dark-brown: oklab(25% -3% 15.75%);
+$light-brown: oklab(35% -3% 15.75%);
+$white: oklab(98% 0.25% 0.75%);
+
+// Font weights
+
+$regular: 400;
+$semibold: 500;
+$bold: 700;

@@ -22,14 +22,14 @@
         }
     }
 
-    @media (min-width: 700px) {
+    @media (min-width: 800px) {
         display: none;
     }
 }
 
 div[class^="c-hamburger__"] {
     display: inline-block;
-    background: $black;
+    background: $dark-brown;
     height: 3px;
     width: 1.75em;
     border-radius: 3px;

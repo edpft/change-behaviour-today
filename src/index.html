@@ -31,10 +31,45 @@
     <script type="module" src="main.js" defer></script>
   </head>
 
-  <body class="l-stack l-stack--large l-main-container">
+  <body class="l-stack l-stack--large">
     <nav id="navigation" class="c-navigation">
       <a class="c-logo" href="#">
-        <img class="c-logo__image" src="change-behaviour-today-logo.svg" alt="" />
+        <svg
+          class="c-logo__image"
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          height="40px"
+          width="40px"
+          viewBox="0 0 250 250"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g transform="translate(0.000000,250.000000) scale(0.100000,-0.100000)">
+            <path
+              d="M1135 2364 c-87 -19 -201 -67 -280 -119 -71 -46 -188 -160 -234 -228
+-83 -122 -138 -284 -148 -437 l-6 -94 -95 -176 c-135 -250 -142 -266 -130
+-300 12 -37 51 -50 149 -50 l77 0 4 -163 c3 -140 6 -168 24 -207 28 -59 77
+-108 139 -136 47 -22 62 -24 233 -24 l182 0 0 -80 c0 -73 3 -83 25 -105 29
+-30 68 -32 95 -5 18 18 20 33 20 155 0 188 19 175 -259 175 -210 0 -219 1
+-252 23 -62 41 -69 68 -69 283 0 228 1 226 -111 232 -38 2 -69 5 -69 6 0 1 40
+77 88 168 l89 166 6 97 c12 182 63 317 163 439 143 173 348 264 574 253 214
+-10 397 -105 525 -271 107 -141 150 -279 143 -458 -8 -183 -60 -309 -181 -446
+l-47 -53 0 -368 c0 -337 2 -371 18 -389 26 -32 63 -37 95 -12 l27 21 0 343 0
+343 53 69 c75 96 101 145 136 249 40 122 55 251 41 363 -55 437 -411 754 -844
+751 -61 0 -142 -7 -181 -15z"
+            />
+            <path
+              d="M1240 2040 c-237 -32 -399 -220 -445 -515 -5 -33 -2 -46 15 -68 45
+-57 130 -19 130 58 0 49 38 164 72 217 35 57 92 109 150 140 37 20 58 23 148
+23 96 0 110 -3 164 -29 73 -36 133 -94 166 -161 21 -42 25 -65 25 -140 0 -80
+-3 -95 -27 -136 -58 -99 -142 -144 -257 -137 -59 3 -76 8 -108 34 -81 64 -105
+169 -58 249 39 68 120 94 185 60 32 -17 50 -43 50 -74 0 -24 -45 -61 -75 -61
+-29 0 -65 -40 -65 -71 0 -14 11 -36 25 -49 20 -19 32 -22 70 -18 62 7 133 53
+158 102 81 156 -36 326 -224 326 -163 0 -288 -128 -289 -297 0 -140 70 -252
+197 -315 60 -29 75 -32 152 -32 139 1 236 49 328 162 62 76 87 166 81 287 -4
+81 -10 104 -42 170 -67 143 -201 241 -364 271 -85 15 -83 15 -162 4z"
+            />
+          </g>
+        </svg>
       </a>
       <button type="button" id="navigationButton" aria-label="Menu" aria-expanded="false" class="c-hamburger">
         <div class="c-hamburger__top-row"></div>
@@ -59,29 +94,31 @@
         </li>
       </ul>
     </nav>
-    <header class="l-stack l-stack--large | c-hero">
-      <h1 class="c-hero__title">Change Behaviour Today</h1>
-      <div class="l-stack l-stack--small">
-        <p class="c-hero__text">
-          My name is Sarah Fawcett, I am a
-          <strong>Cognitive Behavioural Psychotherapist</strong>.
-        </p>
-        <p class="c-hero__text">
-          I offer Cognitive Behavioural Therapy to people experiencing problems with stress, anxiety, panic attacks, and
-          low mood. I specialise in treating depression, low self-esteem, and perinatal distress.
-        </p>
+    <header class="c-hero">
+      <div class="l-main-container l-stack l-stack--large | c-hero__content">
+        <h1 class="c-hero__title">Change Behaviour Today</h1>
+        <div class="l-stack l-stack--small">
+          <p class="c-text--hero c-text--lead">
+            Hi, I'm Sarah Fawcett and I'm a Cognitive Behavioural Psychotherapist.
+          </p>
+          <p class="c-text--hero">
+            I offer Cognitive Behavioural Therapy to people experiencing problems with stress, anxiety, panic attacks,
+            and low mood. I specialise in treating depression, low self-esteem, and perinatal distress.
+          </p>
+        </div>
+        <a
+          class="c-hero__button"
+          href="mailto:sarahfawcettCBT@gmail.com?subject=Appointment Request"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Send me an email</a
+        >
       </div>
-      <a
-        class="c-hero__button"
-        href="mailto:sarahfawcettCBT@gmail.com?subject=Appointment Request"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Arrange an appointment</a
-      >
+      <div class="c-hero__image"></div>
     </header>
-    <main class="l-stack l-stack--large">
+    <main class="l-main-container l-stack--large">
       <section id="how-i-work" class="l-stack l-stack--medium">
-        <h2 class="vertically-centered">How I work</h2>
+        <h2>How I work</h2>
         <section class="l-stack l-stack--small">
           <p>
             I use cognitive behavioural therapy, or CBT, to help people identify the unhelpful behaviours and thoughts
@@ -115,7 +152,7 @@
         </section>
       </section>
       <section id="contact-details" class="l-stack l-stack--medium">
-        <h2 class="vertically-centered">Contact Details</h2>
+        <h2>Contact Details</h2>
         <p>
           If you decide that CBT would be helpful for you then please contact me by phone or email to make an
           appointment. Evening and weekend appointments are available.
@@ -133,7 +170,7 @@
                 d="M16.5562 12.9062L16.1007 13.359C16.1007 13.359 15.0181 14.4355 12.0631 11.4972C9.10812 8.55901 10.1907 7.48257 10.1907 7.48257L10.4775 7.19738C11.1841 6.49484 11.2507 5.36691 10.6342 4.54348L9.37326 2.85908C8.61028 1.83992 7.13596 1.70529 6.26145 2.57483L4.69185 4.13552C4.25823 4.56668 3.96765 5.12559 4.00289 5.74561C4.09304 7.33182 4.81071 10.7447 8.81536 14.7266C13.0621 18.9492 17.0468 19.117 18.6763 18.9651C19.1917 18.9171 19.6399 18.6546 20.0011 18.2954L21.4217 16.883C22.3806 15.9295 22.1102 14.2949 20.8833 13.628L18.9728 12.5894C18.1672 12.1515 17.1858 12.2801 16.5562 12.9062Z"
               />
             </svg>
-            <p>07791896096</p>
+            <p class="c-contact-method__text">07791896096</p>
           </a>
           <a
             class="c-contact-method"
@@ -145,46 +182,41 @@
               class="c-contact-method__image"
               width="50px"
               height="50px"
-              fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M4 7L10.94 11.3375C11.5885 11.7428 12.4115 11.7428 13.06 11.3375L20 7M5 18H19C20.1046 18 21 17.1046 21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18Z"
-                stroke="#000000"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
               />
             </svg>
-            <p>sarahfawcettCBT@gmail.com</p>
+            <p class="c-contact-method__text">sarahfawcettCBT@gmail.com</p>
           </a>
         </address>
       </section>
       <section id="fees" class="l-stack l-stack--medium">
-        <h2 class="vertically-centered">Fees</h2>
+        <h2>Fees</h2>
         <section class="l-stack l-stack--small">
-          <table>
+          <table class="c-fees">
             <tbody>
-              <tr>
+              <tr class="c-fees__row">
                 <td>Assessment Session</td>
-                <td>£95</td>
+                <td class="c-fees__price">£95</td>
               </tr>
-              <tr>
+              <tr class="c-fees__row">
                 <td>Treatment Session</td>
-                <td>£95</td>
+                <td class="c-fees__price">£95</td>
               </tr>
-              <tr>
+              <tr class="c-fees__row">
                 <td>Weekend Session</td>
-                <td>£110</td>
+                <td class="c-fees__price">£110</td>
               </tr>
-              <tr>
+              <tr class="c-fees__row">
                 <td>Student/Lower Income</td>
-                <td>£60</td>
+                <td class="c-fees__price">£60</td>
               </tr>
-              <tr>
+              <tr class="c-fees__row">
                 <td>Supervision</td>
-                <td>£60</td>
+                <td class="c-fees__price">£60</td>
               </tr>
             </tbody>
           </table>
@@ -234,7 +266,7 @@
         </section>
       </section>
       <section id="what-is-cbt" class="l-stack l-stack--medium">
-        <h2 class="vertically-centered">What is CBT</h2>
+        <h2>What is CBT</h2>
         <p>
           Cognitive Behavioural Therapy or CBT is a short term, goal focused therapy that has been proven to help treat
           a range of psychological conditions.
@@ -261,15 +293,29 @@
         </p>
       </section>
     </main>
-    <footer class="footer">
-      <p class="footer__text">
+    <footer class="l-stack l-stack--small | c-footer">
+      <p class="c-text--footer"><a href="https://babcp.com/CBTRegister/Search#/">BABCP</a> Membership Number: 140299</p>
+      <div class="c-footer__contact">
+        <p class="c-text--footer">Tel: <a href="tel:+447791896096">07791896096</a></p>
+        <p class="c-text--footer">
+          Email:
+          <a
+            href="mailto:sarahfawcettCBT@gmail.com?subject=Appointment Request"
+            target="_blank"
+            rel="noopener noreferrer"
+            >sarahfawcettCBT@gmail.com</a
+          >
+        </p>
+      </div>
+      <p class="c-text--footer">
         Photo by
-        <a href="https://unsplash.com/@anniespratt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-          >Annie Spratt</a
+        <a
+          href="https://unsplash.com/@stephaneickschen?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          >Stephan Eickschen</a
         >
         on
         <a
-          href="https://unsplash.com/photos/B4w3LnP6Ec0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          href="https://unsplash.com/photos/UqJsmLA52Qc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
           >Unsplash</a
         >
       </p>

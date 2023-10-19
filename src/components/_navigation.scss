@@ -7,10 +7,12 @@
     justify-content: space-between;
     width: 100%;
     background: $white;
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid $dark-brown;
     position: fixed;
-    top: 0;
+    top: 0%;
+    right: 0%;
     height: max(44px, 5dvh);
+    z-index: 2;
 }
 
 .c-navigation__items {
@@ -40,8 +42,8 @@
     @include add-button-display-styles;
     @include touch-button;
     
-    color: $black;
-    border-bottom: 1px solid $black;
+    color: $dark-brown;
+    border-bottom: 1px solid $dark-brown;
     text-transform: uppercase;
     text-align: end;
     width: 100%;
@@ -53,6 +55,26 @@
 
     &:hover, &:focus {
         color: $white;
-        background: $black;
+        background: $dark-brown;
+    }
+}
+
+@media (min-width: 800px) {
+    .c-navigation__items {
+        clip-path: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: static;
+        top: auto;
+        right: auto;
+        margin-left: $space-2xs;
+    }
+
+    .c-navigation__link {
+        padding-block: 0;
+        font-size: $size-xs;
+        display: grid;
+        place-items: center;
     }
 }
