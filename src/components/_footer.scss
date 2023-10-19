@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.c-footer {
+    background: $amethyst;
+    color: $white;
+    display: grid;
+    place-content: center;
+    min-height: 20dvh;
+    padding-block: $space-s;
+}
+
+.c-footer__contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $space-xs;
+}

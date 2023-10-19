@@ -1,0 +1,43 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.c-hamburger {
+    @include remove-default-button-styles;
+    @include add-button-display-styles;
+    @include touch-button;
+    display: flex;
+    flex-direction: column;
+
+    &--open {
+        .c-hamburger__top-row {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .c-hamburger__middle-row {
+            opacity: 0;
+        }
+
+        .c-hamburger__bottom-row {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+    }
+
+    @media (min-width: 800px) {
+        display: none;
+    }
+}
+
+div[class^="c-hamburger__"] {
+    display: inline-block;
+    background: $dark-brown;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: ease-in 200ms;
+    margin-bottom: 3px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+}

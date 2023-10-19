@@ -1,0 +1,42 @@
+// https://every-layout.dev/layouts/stack/
+
+@use '../abstracts/variables' as *;
+
+.l-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.l-stack--large {
+    @each $header in $headers {
+        > #{$header} + * {
+            margin-top: $space-l-xl;
+        }
+    }
+    > * + * {
+        margin-top: $space-l;
+    }
+} 
+
+.l-stack--medium {
+    @each $header in $headers {
+        > #{$header} + * {
+            margin-top: $space-m-l;
+        }
+    }
+    > * + * {
+        margin-top: $space-m;
+    }
+}    
+
+.l-stack--small {
+    @each $header in $headers {
+        > #{$header} + * {
+            margin-top: $space-s-m;
+        }
+    }
+    > * + * {
+        margin-top: $space-s;
+    }
+}
