@@ -11,11 +11,11 @@
 .l-stack--large {
     @each $header in $headers {
         > #{$header} + * {
-            margin-top: $space-l-xl;
+            margin-top: $space-xl-2xl;
         }
     }
     > * + * {
-        margin-top: $space-l;
+        margin-top: $space-xl;
     }
 } 
 

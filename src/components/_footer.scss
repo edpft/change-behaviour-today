@@ -2,8 +2,8 @@
 @use '../abstracts/mixins' as *;
 
 .c-footer {
-    background: $amethyst;
-    color: $white;
+    background: $waterloo-indigo;
+    color: $light-grey;
     display: grid;
     place-content: center;
     min-height: 20dvh;

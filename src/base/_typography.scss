@@ -42,13 +42,13 @@ $serif: ('IBM Plex Serif', Georgia, "Times New Roman", serif);
 }
 
 html {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 h1, h2, h3  {
     font-family: $serif;
     font-weight: $bold;
-    color: $dark-brown;
+    color: $dark-pesto-brown;
 }
 
 h1 {
@@ -64,7 +64,7 @@ h3 {
 }
 
 .c-text--hero {
-    color: $dark-brown;
+    color: $dark-pesto-brown;
 }
 
 .c-text--lead {
@@ -73,7 +73,7 @@ h3 {
 
 .c-text--footer {
     font-size: $size-s;
-    color: $white;
+    color: $light-grey;
     text-align: center;
 
     > a {

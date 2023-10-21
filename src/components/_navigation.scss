@@ -6,8 +6,8 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    background: $white;
-    border-bottom: 1px solid $dark-brown;
+    background: $waterloo-indigo;
+    color: $light-grey;
     position: fixed;
     top: 0%;
     right: 0%;
@@ -16,11 +16,12 @@
 }
 
 .c-navigation__items {
+    background: $waterloo-indigo;
+    color: $light-grey;
     padding: 0;
     margin: 0;
     width: 100%;
     position: absolute;
-    background: $white;
     top: 100%;
     right: 0%;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -42,9 +43,9 @@
     @include add-button-display-styles;
     @include touch-button;
     
-    color: $dark-brown;
-    border-bottom: 1px solid $dark-brown;
+    color: $light-grey;
     text-transform: uppercase;
+    font-weight: $semibold;
     text-align: end;
     width: 100%;
     padding: $space-s $space-xs;
@@ -54,8 +55,8 @@
     }
 
     &:hover, &:focus {
-        color: $white;
-        background: $dark-brown;
+        color: $waterloo-indigo;
+        background: $light-grey;
     }
 }
 

@@ -4,14 +4,14 @@
 .c-hero {
     margin-top: max(44px, 5dvh);
     height: calc(100dvh - max(44px, 5dvh));
-    color: $dark-brown;
+    color: $dark-pesto-brown;
     padding-bottom: $space-xs;
     display: grid;
 
     &::after {
         content: "";
         grid-area: 1 / -1;
-        background-color: $white;
+        background-color: $light-grey;
         opacity: 0.5;
     }
 }
@@ -39,8 +39,8 @@
     @include add-button-display-styles;
     @include touch-button;
 
-    background: $indigo;
-    color: $white;
+    background: $marguerite-blue;
+    color: $light-grey;
     align-self: center;
     padding: $space-s $space-l;
     border-radius: $space-m;

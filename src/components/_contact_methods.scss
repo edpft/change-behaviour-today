@@ -26,15 +26,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: $dark-brown;
-    background: $amethyst;
+    color: $dark-pesto-brown;
+    background: $waterloo-indigo;
     height: 120px;
     width: 320px;
 }
 
 .c-contact-method__image {
-    fill: $amethyst;
-    stroke: $white;
+    fill: $waterloo-indigo;
+    stroke: $light-grey;
     stroke-width: 2;
     stroke-linecap: "round";
     stroke-linejoin: "round";
@@ -45,7 +45,7 @@
 .c-contact-method__text {
     font-style: normal;
     font-weight: $semibold;
-    color: $white;
+    color: $light-grey;
 }
 
 @media (min-width: 800px) {
