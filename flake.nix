@@ -5,25 +5,24 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, ... }:
-    let
-      system = "x86_64-linux";
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  }: let
+    system = "x86_64-linux";
 
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        allowUnfree = true;
       };
-    in
-    with pkgs;
+    };
+  in
     {
-      formatter.${system} = nixpkgs-fmt;
-
-      devShell.${system} = mkShell {
-        buildInputs = [ 
-          google-chrome
-          nodejs_18
+      devShell.${system} = pkgs.mkShell {
+        buildInputs = [
+          pkgs.nodejs_22
         ];
       };
     };

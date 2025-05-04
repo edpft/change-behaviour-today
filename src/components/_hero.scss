@@ -26,11 +26,10 @@
     height: calc(100dvh - max(44px, 5dvh));
     grid-area: 1 / -1;
     background-repeat: no-repeat;
-    background-image: image-set(
-        url("stephan-eickschen-UqJsmLA52Qc-unsplash.avif") type("image/avif"),
-        url("stephan-eickschen-UqJsmLA52Qc-unsplash.webp") type("image/webp"),
-        url("stephan-eickschen-UqJsmLA52Qc-unsplash.jpg") type("image/jpg"),
-    );
+    background-image: image-set(url("stephan-eickschen-UqJsmLA52Qc-unsplash.avif") type("image/avif"),
+            url("stephan-eickschen-UqJsmLA52Qc-unsplash.webp") type("image/webp"),
+            url("stephan-eickschen-UqJsmLA52Qc-unsplash.jpg") type("image/jpg"),
+        );
     background-size: cover;
 }
 
@@ -50,4 +49,16 @@
         scale: 105%;
     }
 
+}
+
+.c-hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.c-hero__photo {
+    object-fit: contain;
+    border-radius: 0.75rem;
+    border: solid 0.25rem white;
 }
