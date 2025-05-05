@@ -3,35 +3,23 @@
 
 .c-hero {
     margin-top: max(44px, 5dvh);
-    height: calc(100dvh - max(44px, 5dvh));
     color: $dark-pesto-brown;
     padding-bottom: $space-xs;
-    display: grid;
 
-    &::after {
-        content: "";
-        grid-area: 1 / -1;
-        background-color: $light-grey;
-        opacity: 0.5;
-    }
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        url("stephan-eickschen-UqJsmLA52Qc-unsplash.jpg") type("image/avif");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        image-set(url("stephan-eickschen-UqJsmLA52Qc-unsplash.avif") type("image/avif"),
+            url("stephan-eickschen-UqJsmLA52Qc-unsplash.webp") type("image/webp"),
+            url("stephan-eickschen-UqJsmLA52Qc-unsplash.jpg") type("image/jpeg"),
+        );
+    background-size: cover;
+    background-blend-mode: saturation;
 }
 
 .c-hero__content {
-    z-index: 1;
-    grid-area: 1 / -1;
-    margin: auto;
-}
-
-.c-hero__image {
-    height: calc(100dvh - max(44px, 5dvh));
-    grid-area: 1 / -1;
-    background-repeat: no-repeat;
-    background-image: image-set(
-        url("stephan-eickschen-UqJsmLA52Qc-unsplash.avif") type("image/avif"),
-        url("stephan-eickschen-UqJsmLA52Qc-unsplash.webp") type("image/webp"),
-        url("stephan-eickschen-UqJsmLA52Qc-unsplash.jpg") type("image/jpg"),
-    );
-    background-size: cover;
+    margin: 5rem auto;
 }
 
 .c-hero__button {
@@ -50,4 +38,19 @@
         scale: 105%;
     }
 
+}
+
+.c-hero__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.c-hero__photo {
+    object-fit: contain;
+    border-radius: 0.75rem;
+    border: solid 0.25rem white;
+    margin: auto;
+    height: auto;
+    max-width: 100%;
 }
