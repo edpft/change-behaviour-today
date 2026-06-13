@@ -11,6 +11,7 @@
     "test:build": "vitest run --config vitest.config.js test/build.test.js",
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
+    "validate:html": "html-validate 'dst/**/*.html'",
     "lighthouse": "lhci autorun"
   },
   "license": "MIT",

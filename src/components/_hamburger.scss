@@ -27,7 +27,7 @@
   }
 }
 
-div[class^='c-hamburger__'] {
+[class^='c-hamburger__'] {
   display: inline-block;
   background: $light-grey;
   height: 3px;
