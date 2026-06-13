@@ -4,13 +4,13 @@ on:
   push:
     branches: [main]
     paths:
-      - "src/**"
-      - "package.json"
-      - "package-lock.json"
-      - "vite.config.js"
-      - "postcss.config.js"
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.js'
+      - 'postcss.config.js'
   workflow_run:
-    workflows: ["Process images"]
+    workflows: ['Process images']
     types: [completed]
     branches: [main]
 

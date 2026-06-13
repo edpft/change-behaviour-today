@@ -2,17 +2,17 @@
 @use '../abstracts/mixins' as *;
 
 .c-footer {
-    background: $waterloo-indigo;
-    color: $light-grey;
-    display: grid;
-    place-content: center;
-    min-height: 20dvh;
-    padding-block: $space-s;
+  background: $waterloo-indigo;
+  color: $light-grey;
+  display: grid;
+  place-content: center;
+  min-height: 20dvh;
+  padding-block: $space-s;
 }
 
 .c-footer__contact {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: $space-xs;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-xs;
 }

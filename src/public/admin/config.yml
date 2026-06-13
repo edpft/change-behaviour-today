@@ -20,7 +20,7 @@ collections:
               - label: Phone Number
                 name: phone
                 widget: string
-                hint: "Enter as 07xxx xxxxxx (UK format)"
+                hint: 'Enter as 07xxx xxxxxx (UK format)'
               - label: Email Address
                 name: email
                 widget: string
@@ -35,7 +35,7 @@ collections:
               - label: Introduction Paragraph
                 name: intro
                 widget: text
-                hint: "The short paragraph shown on the homepage alongside your photo"
+                hint: 'The short paragraph shown on the homepage alongside your photo'
 
           - label: How I Work
             name: how_i_work

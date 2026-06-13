@@ -2,21 +2,20 @@
 @use '../abstracts/variables' as *;
 
 .c-logo {
-    @include remove-default-button-styles;
-    @include add-button-display-styles;
-    @include touch-button;
+  @include remove-default-button-styles;
+  @include add-button-display-styles;
+  @include touch-button;
 }
 
 .c-logo__image {
-    height: 100%;
-    padding: 0.125rem;
-    fill: $light-grey;
-    background: transparent;
+  height: 100%;
+  padding: 0.125rem;
+  fill: $light-grey;
+  background: transparent;
 
-    &:hover {
-        background: $light-grey;
-        fill: $waterloo-indigo;
-        border-bottom: 1px solid $waterloo-indigo;
-    }
-    
+  &:hover {
+    background: $light-grey;
+    fill: $waterloo-indigo;
+    border-bottom: 1px solid $waterloo-indigo;
+  }
 }

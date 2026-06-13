@@ -2,17 +2,23 @@
   "name": "change-behaviour-today",
   "version": "0.1.0",
   "description": "Sarah's website",
+  "type": "module",
   "scripts": {
     "dev": "vite build --watch & vite preview",
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run --config vitest.config.js test/content.test.js",
-    "test:build": "vitest run --config vitest.config.js test/build.test.js"
+    "test:build": "vitest run --config vitest.config.js test/build.test.js",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write ."
   },
   "license": "MIT",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "autoprefixer": "^10.4.16",
     "cssnano": "^8.0.2",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
     "js-yaml": "^4.2.0",
     "lighthouse": "^12.8.2",
     "postcss": "^8.4.31",
@@ -20,6 +26,8 @@
     "postcss-font-magician": "^4.0.0",
     "postcss-import": "^16.1.1",
     "postcss-preset-env": "^11.3.0",
+    "prettier": "^3.8.4",
+    "prettier-plugin-handlebars": "^0.0.1",
     "sass": "^1.69.3",
     "sharp": "^0.35.1",
     "terser": "^5.21.0",

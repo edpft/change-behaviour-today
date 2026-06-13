@@ -3,44 +3,44 @@
 @use '../abstracts/variables' as *;
 
 .l-stack {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .l-stack--large {
-    @each $header in $headers {
-        > #{$header} + * {
-            margin-top: $space-xl-2xl;
-        }
+  @each $header in $headers {
+    > #{$header} + * {
+      margin-top: $space-xl-2xl;
     }
-    > * + * {
-        margin-top: $space-xl;
-    }
-} 
+  }
+  > * + * {
+    margin-top: $space-xl;
+  }
+}
 
 .l-stack--medium {
-    @each $header in $headers {
-        > #{$header} + * {
-            margin-top: $space-m-l;
-        }
+  @each $header in $headers {
+    > #{$header} + * {
+      margin-top: $space-m-l;
     }
-    > * + * {
-        margin-top: $space-m;
-    }
-}    
+  }
+  > * + * {
+    margin-top: $space-m;
+  }
+}
 
 .l-stack--small {
-    @each $header in $headers {
-        > #{$header} + * {
-            margin-top: $space-s-m;
-        }
+  @each $header in $headers {
+    > #{$header} + * {
+      margin-top: $space-s-m;
     }
-    > * + * {
-        margin-top: $space-s;
-    }
+  }
+  > * + * {
+    margin-top: $space-s;
+  }
 }
 
 .l-stack--centred {
-    justify-content: center;
+  justify-content: center;
 }

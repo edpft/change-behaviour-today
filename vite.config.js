@@ -1,18 +1,16 @@
-import { defineConfig } from "vite";
-import viteCompression from "vite-plugin-compression";
-import handlebars from "vite-plugin-handlebars";
-import yaml from "js-yaml";
-import fs from "fs";
+import { defineConfig } from 'vite';
+import viteCompression from 'vite-plugin-compression';
+import handlebars from 'vite-plugin-handlebars';
+import yaml from 'js-yaml';
+import fs from 'fs';
 
-const content = yaml.load(
-  fs.readFileSync("src/_data/content.yaml", "utf8")
-);
+const content = yaml.load(fs.readFileSync('src/_data/content.yaml', 'utf8'));
 
 export default defineConfig({
-  root: "src/",
-  base: "./",
+  root: 'src/',
+  base: './',
   build: {
-    outDir: "../dst/",
+    outDir: '../dst/',
     emptyOutDir: true,
   },
   preview: {
@@ -22,11 +20,11 @@ export default defineConfig({
     handlebars({
       context: content,
       helpers: {
-        tel: (phone) => String(phone).replace(/^0/, "+44"),
+        tel: (phone) => String(phone).replace(/^0/, '+44'),
       },
     }),
     viteCompression({
-      algorithm: "brotliCompress",
+      algorithm: 'brotliCompress',
     }),
   ],
 });
