@@ -8,11 +8,11 @@
 
     background-repeat: no-repeat;
     background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-        url("stephan-eickschen-UqJsmLA52Qc-unsplash.jpg") type("image/avif");
+        url("../stephan-eickschen-UqJsmLA52Qc-unsplash.jpg") type("image/avif");
     background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-        image-set(url("stephan-eickschen-UqJsmLA52Qc-unsplash.avif") type("image/avif"),
-            url("stephan-eickschen-UqJsmLA52Qc-unsplash.webp") type("image/webp"),
-            url("stephan-eickschen-UqJsmLA52Qc-unsplash.jpg") type("image/jpeg"),
+        image-set(url("../stephan-eickschen-UqJsmLA52Qc-unsplash.avif") type("image/avif"),
+            url("../stephan-eickschen-UqJsmLA52Qc-unsplash.webp") type("image/webp"),
+            url("../stephan-eickschen-UqJsmLA52Qc-unsplash.jpg") type("image/jpeg"),
         );
     background-size: cover;
     background-blend-mode: saturation;
