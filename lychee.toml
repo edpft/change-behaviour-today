@@ -1,4 +1,4 @@
 timeout = 10
 max_retries = 3
 exclude = ["^mailto:", "^tel:"]
-accept = [200, 206, 429]
+accept = [200, 202, 206, 401, 429]
