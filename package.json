@@ -13,6 +13,7 @@
     "format": "prettier --write .",
     "test:a11y": "vitest run --config vitest.config.js test/accessibility.test.js",
     "validate:html": "html-validate 'dst/**/*.html'",
+    "validate:links": "lychee --config lychee.toml 'dst/**/*.html'",
     "lighthouse": "lhci autorun"
   },
   "license": "MIT",
