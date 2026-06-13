@@ -11,6 +11,7 @@
     "test:build": "vitest run --config vitest.config.js test/build.test.js",
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
+    "test:a11y": "vitest run --config vitest.config.js test/accessibility.test.js",
     "validate:html": "html-validate 'dst/**/*.html'",
     "lighthouse": "lhci autorun"
   },
