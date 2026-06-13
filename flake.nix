@@ -24,6 +24,7 @@
         buildInputs = [
           pkgs.nodejs_22
           pkgs.chromium
+          pkgs.lychee
         ];
 
         shellHook = ''
