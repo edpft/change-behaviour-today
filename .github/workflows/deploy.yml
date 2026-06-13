@@ -5,10 +5,17 @@ on:
     branches: [main]
     paths:
       - 'src/**'
+      - 'test/**'
       - 'package.json'
       - 'package-lock.json'
       - 'vite.config.js'
+      - 'vitest.config.js'
       - 'postcss.config.js'
+      - 'eslint.config.js'
+      - '.htmlvalidate.json'
+      - '.lighthouserc.yml'
+      - 'lychee.toml'
+      - '.github/workflows/deploy.yml'
   workflow_run:
     workflows: ['Process images']
     types: [completed]
