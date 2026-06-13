@@ -1,0 +1,116 @@
+backend:
+  name: github
+  repo: edpft/change-behaviour-today
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+# Uncomment and fill in your GitHub OAuth App client ID after registering it:
+# client_id: YOUR_GITHUB_OAUTH_CLIENT_ID
+
+media_folder: src/images
+public_folder: /images
+
+collections:
+  - name: site_content
+    label: Website Content
+    files:
+      - name: main
+        label: Main Content
+        file: src/_data/content.yaml
+        fields:
+          - label: Contact Details
+            name: contact
+            widget: object
+            fields:
+              - label: Phone Number
+                name: phone
+                widget: string
+                hint: "Enter as 07xxx xxxxxx (UK format)"
+              - label: Email Address
+                name: email
+                widget: string
+              - label: BABCP Membership Number
+                name: babcp_membership_number
+                widget: string
+
+          - label: Hero Introduction
+            name: hero
+            widget: object
+            fields:
+              - label: Introduction Paragraph
+                name: intro
+                widget: text
+                hint: "The short paragraph shown on the homepage alongside your photo"
+
+          - label: How I Work
+            name: how_i_work
+            widget: object
+            fields:
+              - label: Overview
+                name: intro
+                widget: text
+              - label: Therapies Offered
+                name: therapies
+                widget: list
+                label_singular: Therapy
+                field:
+                  label: Therapy
+                  name: therapy
+                  widget: string
+              - label: Getting Started (paragraphs)
+                name: getting_started_paras
+                widget: list
+                label_singular: Paragraph
+                field:
+                  label: Paragraph
+                  name: paragraph
+                  widget: text
+
+          - label: Fees
+            name: fees
+            widget: object
+            fields:
+              - label: Fee Rows
+                name: rows
+                widget: list
+                label_singular: Fee
+                fields:
+                  - label: Session Type
+                    name: label
+                    widget: string
+                  - label: Price (e.g. £95)
+                    name: price
+                    widget: string
+              - label: Payment Note
+                name: payment_note
+                widget: string
+
+          - label: About Me
+            name: about_me
+            widget: object
+            fields:
+              - label: Professional Experience (paragraphs)
+                name: experience_paras
+                widget: list
+                label_singular: Paragraph
+                field:
+                  label: Paragraph
+                  name: paragraph
+                  widget: text
+              - label: Conditions Treated
+                name: conditions
+                widget: list
+                label_singular: Condition
+                field:
+                  label: Condition
+                  name: condition
+                  widget: string
+              - label: Qualifications
+                name: qualifications
+                widget: list
+                label_singular: Qualification
+                field:
+                  label: Qualification
+                  name: qualification
+                  widget: string

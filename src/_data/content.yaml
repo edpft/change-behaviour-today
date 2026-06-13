@@ -1,0 +1,59 @@
+contact:
+  phone: "07791896096"
+  email: "sarahfawcettCBT@gmail.com"
+  babcp_membership_number: "140299"
+
+hero:
+  intro: "I offer Cognitive Behavioural Therapy to people experiencing depression and anxiety disorders. I specialise in treating trauma, low self-esteem, and perinatal distress."
+
+how_i_work:
+  intro: "I use cognitive behavioural therapy, or CBT, to help people identify the unhelpful behaviours and thoughts preventing them from moving forward. My therapy is a collaborative and transparent process in which I work with the client to help them find the answers to their problem. I believe that by the end of treatment a person should be equipped with the skills to act as their own therapist and manage whatever setbacks they may encounter."
+  therapies:
+    - "Cognitive Behavioural Therapy"
+    - "Couples Therapy for Depression"
+    - "Acceptance and Commitment Therapy"
+    - "Compassion Focused Therapy"
+    - "Clinical Supervision"
+  getting_started_paras:
+    - "I begin therapy with an assessment session to discuss the problem in detail and explore ways in which CBT may be helpful. Following the assessment, I start by offering six sessions of CBT and then review."
+    - "Each session will last 50 minutes."
+    - "The average number of sessions people require is usually between eight and fifteen sessions depending on the presenting problem."
+
+fees:
+  rows:
+    - label: "Assessment Session"
+      price: "£95"
+    - label: "Treatment Session"
+      price: "£95"
+    - label: "Weekend Session"
+      price: "£110"
+    - label: "Supervision"
+      price: "£60"
+  payment_note: "Payment by cash, cheque, or bank transfer."
+
+about_me:
+  experience_paras:
+    - "I have over 15 years' experience helping people to overcome problems with depression and anxiety. In addition to my private practice, I work for the NHS as a Cognitive Behavioural Therapist."
+    - "As part of my role, I see clients individually, as couples, and in groups. I run workshops on managing low self-esteem, procrastination, panic attacks, and building confidence."
+    - "I also offer clinical supervision and have provided training both in-house and at UCL University."
+    - "I trained in Cognitive Behavioural Therapy at one of London's leading Psychology departments, Royal Holloway University of London. I maintain up-to-date knowledge and skills within the field by regularly attending training and supervision in line with requirements for accreditation."
+    - "As a private therapist I offer individual CBT for the following problems:"
+  conditions:
+    - "Depression"
+    - "Generalised Anxiety Disorder"
+    - "Low Self Esteem"
+    - "Relationship Problems"
+    - "Perinatal Anxiety and Depression"
+    - "Birth Trauma"
+    - "Work/Exam Stress"
+    - "Procrastination"
+    - "Poor Motivation"
+    - "Worry and Panic Attacks"
+    - "OCD"
+    - "PTSD"
+  qualifications:
+    - "PG Diploma in Cognitive Behavioural Therapy"
+    - "PG Certificate in Couples Therapy for Depression"
+    - "PG Certificate in The Practice of Mental Health"
+    - "BSc (Hons) in Psychology"
+    - "BABCP Accredited"
