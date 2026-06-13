@@ -1,12 +1,8 @@
 backend:
-  name: github
-  repo: edpft/change-behaviour-today
+  name: git-gateway
+  identity_url: https://changebehaviourtoday.netlify.app/.netlify/identity
+  gateway_url: https://changebehaviourtoday.netlify.app/.netlify/git
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
-
-# Uncomment and fill in your GitHub OAuth App client ID after registering it:
-# client_id: YOUR_GITHUB_OAUTH_CLIENT_ID
 
 media_folder: src/images
 public_folder: /images
