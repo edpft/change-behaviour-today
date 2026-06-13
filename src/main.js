@@ -27,12 +27,18 @@ const initialiseNavigationLinks = () => {
 initialiseHamburger();
 initialiseNavigationLinks();
 
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on('init', (user) => {
-    if (!user) {
-      window.netlifyIdentity.on('login', () => {
-        document.location.href = '/admin/';
-      });
-    }
-  });
-}
+window.addEventListener('load', () => {
+  const script = document.createElement('script');
+  script.src =
+    'https://identity.netlify.com/v1/netlify-identity-widget.js';
+  script.onload = () => {
+    window.netlifyIdentity.on('init', (user) => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  };
+  document.head.appendChild(script);
+});
