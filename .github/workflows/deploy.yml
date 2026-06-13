@@ -38,3 +38,6 @@ jobs:
 
       - name: Verify build output
         run: npm run test:build
+
+      - name: Lighthouse CI
+        run: npm run lighthouse

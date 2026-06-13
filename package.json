@@ -10,11 +10,13 @@
     "test": "vitest run --config vitest.config.js test/content.test.js",
     "test:build": "vitest run --config vitest.config.js test/build.test.js",
     "lint": "eslint . && prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lighthouse": "lhci autorun"
   },
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@lhci/cli": "^0.15.1",
     "autoprefixer": "^10.4.16",
     "cssnano": "^8.0.2",
     "eslint": "^10.5.0",
