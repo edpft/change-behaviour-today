@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite build --watch & vite preview",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run --config vitest.config.js test/content.test.js",
+    "test:build": "vitest run --config vitest.config.js test/build.test.js"
   },
   "license": "MIT",
   "devDependencies": {
@@ -23,6 +25,7 @@
     "terser": "^5.21.0",
     "vite": "^8.0.16",
     "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-handlebars": "^2.0.3"
+    "vite-plugin-handlebars": "^2.0.3",
+    "vitest": "^4.1.8"
   }
 }

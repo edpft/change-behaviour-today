@@ -29,7 +29,14 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build
+      - name: Validate content
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify build output
+        run: npm run test:build
 
       - uses: actions/upload-pages-artifact@v3
         with:
