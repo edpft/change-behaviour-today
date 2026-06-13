@@ -23,7 +23,12 @@
       devShell.${system} = pkgs.mkShell {
         buildInputs = [
           pkgs.nodejs_22
+          pkgs.chromium
         ];
+
+        shellHook = ''
+          export CHROME_PATH="${pkgs.chromium}/bin/chromium"
+        '';
       };
     };
 }
