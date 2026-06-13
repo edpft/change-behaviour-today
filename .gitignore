@@ -135,6 +135,7 @@ dist
 # Lighthouse reports
 *.report.html
 .lighthouseci/
+.lhci-reports/
 
 # Build output (built by GitHub Actions, not committed)
 dst/
