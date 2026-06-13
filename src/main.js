@@ -27,10 +27,18 @@ const initialiseNavigationLinks = () => {
 initialiseHamburger();
 initialiseNavigationLinks();
 
-window.addEventListener('load', () => {
+// Only load Netlify Identity on OAuth callback redirects (access_token in hash).
+// Regular visitors never trigger this, eliminating a 55 KB script load on every page view.
+const { hash } = window.location;
+if (
+  hash.includes('access_token') ||
+  hash.includes('confirmation_token') ||
+  hash.includes('recovery_token') ||
+  hash.includes('invite_token') ||
+  hash.includes('error=')
+) {
   const script = document.createElement('script');
-  script.src =
-    'https://identity.netlify.com/v1/netlify-identity-widget.js';
+  script.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
   script.onload = () => {
     window.netlifyIdentity.on('init', (user) => {
       if (!user) {
@@ -41,4 +49,4 @@ window.addEventListener('load', () => {
     });
   };
   document.head.appendChild(script);
-});
+}
