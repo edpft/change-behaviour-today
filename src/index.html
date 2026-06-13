@@ -231,6 +231,18 @@ l-47 -53 0 -368 c0 -337 2 -371 18 -389 26 -32 63 -37 95 -12 l27 21 0 343 0
         href="https://unsplash.com/photos/UqJsmLA52Qc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
     </p>
   </footer>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>
