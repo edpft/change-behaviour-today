@@ -1,7 +1,5 @@
 backend:
   name: git-gateway
-  identity_url: https://changebehaviourtoday.netlify.app/.netlify/identity
-  gateway_url: https://changebehaviourtoday.netlify.app/.netlify/git
   branch: main
 
 media_folder: src/images

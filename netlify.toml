@@ -1,0 +1,6 @@
+[build]
+  command = "npm test && npm run build && npm run test:build"
+  publish = "dst"
+
+[build.environment]
+  NODE_VERSION = "22"

@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: CI
 
 on:
   push:
@@ -14,24 +14,12 @@ on:
     types: [completed]
     branches: [main]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
-  build-and-deploy:
+  test:
     if: >
       github.event_name == 'push' ||
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -50,10 +38,3 @@ jobs:
 
       - name: Verify build output
         run: npm run test:build
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dst/
-
-      - id: deployment
-        uses: actions/deploy-pages@v4
