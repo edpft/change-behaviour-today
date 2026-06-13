@@ -10,6 +10,7 @@ const content = yaml.load(
 
 export default defineConfig({
   root: "src/",
+  base: "./",
   build: {
     outDir: "../dst/",
     emptyOutDir: true,
