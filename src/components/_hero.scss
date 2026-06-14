@@ -5,13 +5,12 @@
   margin-top: max(44px, 5dvh);
   color: $dark-pesto-brown;
   padding-bottom: $space-xs;
-
   background-repeat: no-repeat;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    linear-gradient(rgb(255 255 255 / 50%), rgb(255 255 255 / 50%)),
     url('../stephan-eickschen-UqJsmLA52Qc-unsplash.jpg');
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    linear-gradient(rgb(255 255 255 / 50%), rgb(255 255 255 / 50%)),
     image-set(
       url('../stephan-eickschen-UqJsmLA52Qc-unsplash.avif') type('image/avif'),
       url('../stephan-eickschen-UqJsmLA52Qc-unsplash.webp') type('image/webp'),

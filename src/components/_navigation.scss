@@ -61,7 +61,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (width >= 800px) {
   .c-navigation__items {
     clip-path: none;
     display: flex;

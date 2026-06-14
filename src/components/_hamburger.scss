@@ -5,6 +5,7 @@
   @include remove-default-button-styles;
   @include add-button-display-styles;
   @include touch-button;
+
   display: flex;
   flex-direction: column;
 
@@ -22,7 +23,7 @@
     }
   }
 
-  @media (min-width: 800px) {
+  @media (width >= 800px) {
     display: none;
   }
 }
@@ -37,6 +38,6 @@
   margin-bottom: 3px;
 
   &:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }

@@ -20,13 +20,16 @@ function inlineCssPlugin() {
     closeBundle() {
       const htmlPath = path.resolve(outDir, 'index.html');
       let html = fs.readFileSync(htmlPath, 'utf8');
-      const match = html.match(/<link rel="stylesheet"[^>]+href="([^"]+)"[^>]*>/);
+      const match = html.match(
+        /<link rel="stylesheet"[^>]+href="([^"]+)"[^>]*>/,
+      );
       if (!match) return;
       const cssPath = path.resolve(outDir, match[1].replace(/^\.\//, ''));
       if (!fs.existsSync(cssPath)) return;
       // Rewrite relative URLs — in the emitted CSS file they resolve from
       // assets/, but after inlining they need to resolve from the HTML root.
-      const css = fs.readFileSync(cssPath, 'utf8')
+      const css = fs
+        .readFileSync(cssPath, 'utf8')
         .replace(/url\(\.\/(?!assets\/)/g, 'url(./assets/')
         .replace(/"\.\/(?!assets\/)/g, '"./assets/');
       html = html.replace(match[0], `<style>${css}</style>`);

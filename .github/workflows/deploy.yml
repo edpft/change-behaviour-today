@@ -12,6 +12,7 @@ on:
       - 'vitest.config.js'
       - 'postcss.config.js'
       - 'eslint.config.js'
+      - '.stylelintrc.json'
       - '.htmlvalidate.json'
       - '.lighthouserc.yml'
       - 'lychee.toml'
@@ -39,6 +40,9 @@ jobs:
 
       - name: Validate content
         run: npm test
+
+      - name: Lint CSS
+        run: stylelint 'src/**/*.scss'
 
       - name: Build
         run: npm run build

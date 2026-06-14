@@ -47,7 +47,7 @@
   color: $light-grey;
 }
 
-@media (min-width: 800px) {
+@media (width >= 800px) {
   .c-contact-methods {
     display: grid;
     grid-template-columns: 1fr 1fr;

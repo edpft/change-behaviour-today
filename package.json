@@ -9,13 +9,13 @@
     "preview": "vite preview",
     "test": "vitest run --config vitest.config.js test/content.test.js",
     "test:build": "vitest run --config vitest.config.js test/build.test.js",
-    "lint": "eslint . && prettier --check .",
+    "lint": "eslint . && prettier --check . && stylelint 'src/**/*.scss'",
     "format": "prettier --write .",
     "test:a11y": "vitest run --config vitest.config.js test/accessibility.test.js",
     "validate:html": "html-validate 'dst/**/*.html'",
     "validate:links": "lychee --config lychee.toml 'dst/**/*.html'",
     "lighthouse": "lhci autorun",
-    "check": "npm test && npm run build && npm run test:build && npm run validate:html && npm run test:a11y && npm run validate:links && npm run lighthouse"
+    "check": "npm test && stylelint 'src/**/*.scss' && npm run build && npm run test:build && npm run validate:html && npm run test:a11y && npm run validate:links && npm run lighthouse"
   },
   "license": "MIT",
   "devDependencies": {
@@ -39,6 +39,8 @@
     "prettier-plugin-handlebars": "^0.0.1",
     "sass": "^1.69.3",
     "sharp": "^0.35.1",
+    "stylelint": "^17.13.0",
+    "stylelint-config-standard-scss": "^17.0.0",
     "terser": "^5.21.0",
     "vite": "^8.0.16",
     "vite-plugin-compression": "^0.5.1",
