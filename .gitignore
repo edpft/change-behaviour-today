@@ -139,3 +139,6 @@ dist
 
 # Build output (built by GitHub Actions, not committed)
 dst/
+
+# Local Netlify folder
+.netlify
