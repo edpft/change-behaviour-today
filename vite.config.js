@@ -26,12 +26,16 @@ function inlineCssPlugin() {
       if (!match) return;
       const cssPath = path.resolve(outDir, match[1].replace(/^\.\//, ''));
       if (!fs.existsSync(cssPath)) return;
-      // Rewrite relative URLs — in the emitted CSS file they resolve from
-      // assets/, but after inlining they need to resolve from the HTML root.
+      // Re-base relative URLs — in the emitted CSS file they resolve from
+      // assets/, but after inlining they resolve from the HTML root. So a
+      // hashed asset `./x` (in assets/) becomes `./assets/x`, and a public
+      // asset `../fonts/x` (one level up from assets/) becomes `./fonts/x`.
       const css = fs
         .readFileSync(cssPath, 'utf8')
         .replace(/url\(\.\/(?!assets\/)/g, 'url(./assets/')
-        .replace(/"\.\/(?!assets\/)/g, '"./assets/');
+        .replace(/"\.\/(?!assets\/)/g, '"./assets/')
+        .replace(/url\(\.\.\//g, 'url(./')
+        .replace(/"\.\.\//g, '"./');
       html = html.replace(match[0], `<style>${css}</style>`);
       fs.writeFileSync(htmlPath, html);
     },
