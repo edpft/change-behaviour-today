@@ -26,6 +26,7 @@
           pkgs.chromium
           pkgs.lychee
           pkgs.netlify-cli
+          pkgs.gh
         ];
 
         shellHook = ''

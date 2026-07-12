@@ -4,6 +4,10 @@ ci:
     numberOfRuns: 3
     autodiscoverUrlBlocklist:
       - '/admin/index.html'
+    settings:
+      # The nix chromium can't use its sandbox on CI runners (Ubuntu 24.04
+      # restricts unprivileged user namespaces), so it fails to launch.
+      chromeFlags: '--no-sandbox'
   assert:
     assertions:
       'categories:performance': ['warn', { minScore: 0.9 }]
