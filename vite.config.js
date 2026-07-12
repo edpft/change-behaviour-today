@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import viteCompression from 'vite-plugin-compression';
 import handlebars from 'vite-plugin-handlebars';
+import browserslist from 'browserslist';
+import { browserslistToTargets } from 'lightningcss';
 import yaml from 'js-yaml';
 import fs from 'fs';
 import path from 'path';
@@ -45,9 +47,19 @@ function inlineCssPlugin() {
 export default defineConfig({
   root: 'src/',
   base: './',
+  css: {
+    // Lightning CSS handles autoprefixing + minification in one pass, driven
+    // by the `browserslist` field in package.json. Replaces the former
+    // PostCSS pipeline (autoprefixer + cssnano + preset-env).
+    transformer: 'lightningcss',
+    lightningcss: {
+      targets: browserslistToTargets(browserslist()),
+    },
+  },
   build: {
     outDir: '../dst/',
     emptyOutDir: true,
+    cssMinify: 'lightningcss',
   },
   preview: {
     port: 8080,
