@@ -24,6 +24,12 @@
   margin: 5rem auto;
 }
 
+// Keep the name on its own line so the role ("Cognitive Behavioural
+// Therapist") stays together instead of breaking mid-phrase.
+.c-hero__title-name {
+  display: block;
+}
+
 .c-hero__button {
   @include remove-default-anchor-styles;
   @include add-button-display-styles;
