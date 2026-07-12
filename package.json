@@ -27,6 +27,7 @@
     "@lhci/cli": "^0.15.1",
     "axe-core": "^4.12.1",
     "browserslist": "^4.24.0",
+    "decap-cms": "3.14.1",
     "eslint": "^10.5.0",
     "globals": "^17.6.0",
     "html-validate": "^10.9.0",

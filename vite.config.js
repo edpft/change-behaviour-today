@@ -44,6 +44,33 @@ function inlineCssPlugin() {
   };
 }
 
+// Self-host Decap CMS instead of loading it from the unpkg CDN. The prebuilt
+// bundle lazy-loads webpack chunks from its own directory, so we copy the whole
+// dist/ (JS only — the source maps are ~50 MB) into admin/decap/ and strip the
+// sourceMappingURL comments so browsers don't 404 on the omitted maps.
+function vendorDecapPlugin() {
+  let outDir;
+  return {
+    name: 'vendor-decap',
+    apply: 'build',
+    configResolved(config) {
+      outDir = path.resolve(config.root, config.build.outDir);
+    },
+    closeBundle() {
+      const srcDir = path.resolve('node_modules/decap-cms/dist');
+      const destDir = path.resolve(outDir, 'admin/decap');
+      fs.mkdirSync(destDir, { recursive: true });
+      for (const file of fs.readdirSync(srcDir)) {
+        if (!file.endsWith('.js')) continue; // skip .map files
+        const code = fs
+          .readFileSync(path.join(srcDir, file), 'utf8')
+          .replace(/\n?\/\/# sourceMappingURL=.*$/, '');
+        fs.writeFileSync(path.join(destDir, file), code);
+      }
+    },
+  };
+}
+
 export default defineConfig({
   root: 'src/',
   base: './',
@@ -72,6 +99,7 @@ export default defineConfig({
       },
     }),
     inlineCssPlugin(),
+    vendorDecapPlugin(),
     viteCompression({
       algorithm: 'brotliCompress',
     }),

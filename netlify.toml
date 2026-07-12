@@ -18,5 +18,8 @@
 
 [[headers]]
   for = "/admin/*"
+  # Decap CMS is self-hosted (see vendorDecapPlugin in vite.config.js), so no
+  # CDN origin is needed. 'unsafe-eval' is required by Decap's ajv-based schema
+  # validation and is scoped to the admin area only.
   [headers.values]
-    Content-Security-Policy = "script-src 'self' https://identity.netlify.com https://unpkg.com; object-src 'none'; base-uri 'none';"
+    Content-Security-Policy = "script-src 'self' 'unsafe-eval' https://identity.netlify.com; object-src 'none'; base-uri 'none';"
