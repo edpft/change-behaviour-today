@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import viteCompression from 'vite-plugin-compression';
 import handlebars from 'vite-plugin-handlebars';
+import browserslist from 'browserslist';
+import { browserslistToTargets } from 'lightningcss';
 import yaml from 'js-yaml';
 import fs from 'fs';
 import path from 'path';
@@ -26,12 +28,16 @@ function inlineCssPlugin() {
       if (!match) return;
       const cssPath = path.resolve(outDir, match[1].replace(/^\.\//, ''));
       if (!fs.existsSync(cssPath)) return;
-      // Rewrite relative URLs — in the emitted CSS file they resolve from
-      // assets/, but after inlining they need to resolve from the HTML root.
+      // Re-base relative URLs — in the emitted CSS file they resolve from
+      // assets/, but after inlining they resolve from the HTML root. So a
+      // hashed asset `./x` (in assets/) becomes `./assets/x`, and a public
+      // asset `../fonts/x` (one level up from assets/) becomes `./fonts/x`.
       const css = fs
         .readFileSync(cssPath, 'utf8')
         .replace(/url\(\.\/(?!assets\/)/g, 'url(./assets/')
-        .replace(/"\.\/(?!assets\/)/g, '"./assets/');
+        .replace(/"\.\/(?!assets\/)/g, '"./assets/')
+        .replace(/url\(\.\.\//g, 'url(./')
+        .replace(/"\.\.\//g, '"./');
       html = html.replace(match[0], `<style>${css}</style>`);
       fs.writeFileSync(htmlPath, html);
     },
@@ -41,9 +47,19 @@ function inlineCssPlugin() {
 export default defineConfig({
   root: 'src/',
   base: './',
+  css: {
+    // Lightning CSS handles autoprefixing + minification in one pass, driven
+    // by the `browserslist` field in package.json. Replaces the former
+    // PostCSS pipeline (autoprefixer + cssnano + preset-env).
+    transformer: 'lightningcss',
+    lightningcss: {
+      targets: browserslistToTargets(browserslist()),
+    },
+  },
   build: {
     outDir: '../dst/',
     emptyOutDir: true,
+    cssMinify: 'lightningcss',
   },
   preview: {
     port: 8080,

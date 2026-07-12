@@ -1,5 +1,7 @@
 [build]
-  command = "npm test && npm run build && npm run test:build"
+  # Tests/gates run in GitHub Actions (see .github/workflows/deploy.yml) before
+  # merge; Netlify only needs to produce the deploy artifact.
+  command = "npm run build"
   publish = "dst"
 
 [build.environment]
