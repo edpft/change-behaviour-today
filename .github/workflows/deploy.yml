@@ -10,13 +10,18 @@ on:
       - 'package-lock.json'
       - 'vite.config.js'
       - 'vitest.config.js'
-      - 'postcss.config.js'
       - 'eslint.config.js'
       - '.stylelintrc.json'
       - '.htmlvalidate.json'
       - '.lighthouserc.yml'
       - 'lychee.toml'
+      - 'flake.nix'
+      - 'flake.lock'
       - '.github/workflows/deploy.yml'
+  # No path filter on PRs: the `test` job is a required status check, so it must
+  # always run on every PR to main — a skipped required check blocks the merge.
+  pull_request:
+    branches: [main]
   workflow_run:
     workflows: ['Process images']
     types: [completed]
@@ -26,15 +31,30 @@ jobs:
   test:
     if: >
       github.event_name == 'push' ||
+      github.event_name == 'pull_request' ||
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
+
+    # Run every step inside the flake devShell so CI matches local dev
+    # (node, lychee, chromium and CHROME_PATH all come from flake.nix).
+    defaults:
+      run:
+        shell: nix develop --command bash -e {0}
+
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: cachix/install-nix-action@v31
         with:
-          node-version: 22
-          cache: npm
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
 
       - run: npm ci
 
@@ -42,7 +62,7 @@ jobs:
         run: npm test
 
       - name: Lint CSS
-        run: stylelint 'src/**/*.scss'
+        run: npx stylelint 'src/**/*.scss'
 
       - name: Build
         run: npm run build
@@ -55,11 +75,6 @@ jobs:
 
       - name: Test accessibility (axe)
         run: npm run test:a11y
-
-      - name: Install lychee
-        uses: taiki-e/install-action@v2
-        with:
-          tool: lychee
 
       - name: Check links
         run: npm run validate:links
