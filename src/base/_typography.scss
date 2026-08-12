@@ -66,7 +66,13 @@ h3 {
 }
 
 .c-text--hero {
+  // The hero sits over a busy floral photo, so give the intro copy a
+  // translucent frosted scrim to keep it comfortably readable.
   color: $dark-pesto-brown;
+  padding: $space-xs $space-s;
+  background: rgb(255 255 255 / 80%);
+  border-radius: $space-2xs;
+  backdrop-filter: blur(2px);
 }
 
 .c-text--lead {
